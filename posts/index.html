@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Posts
+title: Projects
 background: '/img/bg-post.jpg'
 ---
 
@@ -8,6 +8,9 @@ background: '/img/bg-post.jpg'
 
 <article class="post-preview">
   <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+    {% if post.thumbnail %}
+    <img src="{{ post.thumbnail | prepend: site.baseurl | replace: '//', '/' }}" alt="{{ post.title }}" class="img-thumbnail">
+    {% endif %}
     <h2 class="post-title">{{ post.title }}</h2>
     {% if post.subtitle %}
     <h3 class="post-subtitle">{{ post.subtitle }}</h3>
