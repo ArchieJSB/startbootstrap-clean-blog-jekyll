@@ -6,10 +6,7 @@ baseurl:            ""
 url:                "https://alastairb.co.uk"
 
 # Social Profiles
-twitter_username: ArchieJSB
-github_username: ArchieJSB
-facebook_username:
-instagram_username: @talos.design
+instagram_username: talos.design
 linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
