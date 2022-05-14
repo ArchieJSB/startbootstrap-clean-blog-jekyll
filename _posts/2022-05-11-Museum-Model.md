@@ -4,7 +4,7 @@ title: "Museum Model"
 subtitle: "2nd year Uni project"
 date: 2020-01-02 23:45:13 -0400
 background: '/img/posts/museum_model.jpg'
-thumbnail: '/img/posts/museum_model.jpeg'
+thumbnail: '/img/posts/museum_model.jpg'
 ---
 
 # Museum Model
