@@ -29,36 +29,24 @@ layout: default
 
         {{ content }}
 
-        <!-- Home Post List -->
-        {% for post in site.posts limit : 5 %}
-
-        <article class="post-preview">
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="post-title">{{ post.title }}</h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-            {% else %}
-            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-            {% endif %}
+        <div id="posts-carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Home Post List -->
+            {% for post in site.posts limit : 3 %}
+              <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                <img src="{{ post.thumbnail }}" class="d-block w-100" alt="{{ post.title }}">
+              </div>
+            {% endfor %}
+          </div>
+          <a class="carousel-control-prev" href="#posts-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
           </a>
-          <p class="post-meta">Posted by
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-          </p>
-        </article>
-
-        <hr>
-
-        {% endfor %}
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
+          <a class="carousel-control-next" href="#posts-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-
       </div>
     </div>
   </div>
